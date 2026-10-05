@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fbf8f3;
+  --color-paper: #fffdf9;
+  --color-ink: #221c15;
+  --color-ink-soft: #5b5347;
+  --color-brand: #0f5132;
+  --color-brand-soft: #e8f1ea;
+  --color-clay: #c1502e;
+  --color-clay-soft: #fbeae3;
+  --color-hairline: #e6ded1;
+
+  --font-serif: var(--font-fraunces), "Lora", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Subtle paper texture for hero surfaces — no image asset needed. */
+.paper-grain {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(193, 80, 46, 0.07), transparent 42%),
+    radial-gradient(circle at 82% 8%, rgba(15, 81, 50, 0.09), transparent 45%),
+    linear-gradient(180deg, #fffdf9 0%, #fbf8f3 100%);
+}
+
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-hairline);
+  border-radius: 1rem;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--color-hairline);
+  background: #fff;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  outline: none;
+}
+.input:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(15, 81, 50, 0.12);
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.15rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--color-brand);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #0b3f27;
+}
+.btn-secondary {
+  background: var(--color-clay);
+  color: #fff;
+}
+.btn-secondary:hover {
+  filter: brightness(0.94);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+}
+.btn-ghost:hover {
+  background: #fff;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
